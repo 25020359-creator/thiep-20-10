@@ -599,27 +599,10 @@
             transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 300ms ease;
         }
 
-        .cat-1 {
-            top: 0;
-            left: 0;
-        }
-
-        .cat-2 {
-            top: 15px;
-            right: 0;
-        }
-
-        .cat-3 {
-            top: 140px;
-            left: 90px;
-            z-index: 2;
-        }
-
-        .cat-4 {
-            bottom: 20px;
-            left: 0;
-        }
-
+        .cat-1 { top: 0; left: 0; }
+        .cat-2 { top: 15px; right: 0; }
+        .cat-3 { top: 140px; left: 90px; z-index: 2; }
+        .cat-4 { bottom: 20px; left: 0; }
         .cat-5 {
             bottom: -15px;
             right: -20px;
@@ -631,105 +614,58 @@
             z-index: 3;
         }
 
-        .opened .cat-img {
-            opacity: 1;
-        }
+        .opened .cat-img { opacity: 1; }
 
-        .opened .cat-1 {
-            animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 200ms forwards, bounceCat1 3.2s ease-in-out infinite alternate 800ms;
-        }
-
-        .opened .cat-2 {
-            animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 320ms forwards, bounceCat2 2.8s ease-in-out infinite alternate 920ms;
-        }
-
-        .opened .cat-3 {
-            animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 440ms forwards, bounceCat3 3.5s ease-in-out infinite alternate 1040ms;
-        }
-
-        .opened .cat-4 {
-            animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 560ms forwards, bounceCat1 3s ease-in-out infinite alternate 1160ms;
-        }
-
-        .opened .cat-5 {
-            animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 680ms forwards, bounceCat5 3.4s ease-in-out infinite alternate 1280ms;
-        }
+        .opened .cat-1 { animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 200ms forwards, bounceCat1 3.2s ease-in-out infinite alternate 800ms; }
+        .opened .cat-2 { animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 320ms forwards, bounceCat2 2.8s ease-in-out infinite alternate 920ms; }
+        .opened .cat-3 { animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 440ms forwards, bounceCat3 3.5s ease-in-out infinite alternate 1040ms; }
+        .opened .cat-4 { animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 560ms forwards, bounceCat1 3s ease-in-out infinite alternate 1160ms; }
+        .opened .cat-5 { animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 680ms forwards, bounceCat5 3.4s ease-in-out infinite alternate 1280ms; }
 
         @keyframes popCat {
-            0% {
-                opacity: 0;
-                transform: scale(0) rotate(-15deg);
-            }
-
-            75% {
-                opacity: 1;
-                transform: scale(1.15) rotate(5deg);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1) rotate(0deg);
-            }
+            0% { opacity: 0; transform: scale(0) rotate(-15deg); }
+            75% { opacity: 1; transform: scale(1.15) rotate(5deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
         }
 
         @keyframes bounceCat1 {
-            0% {
-                transform: translateY(0) rotate(-4deg) scale(1);
-            }
-
-            100% {
-                transform: translateY(-10px) rotate(4deg) scale(1.05);
-            }
+            0% { transform: translateY(0) rotate(-4deg) scale(1); }
+            100% { transform: translateY(-10px) rotate(4deg) scale(1.05); }
         }
 
         @keyframes bounceCat2 {
-            0% {
-                transform: translateY(0) rotate(5deg) scale(1);
-            }
-
-            100% {
-                transform: translateY(-12px) rotate(-3deg) scale(1.04);
-            }
+            0% { transform: translateY(0) rotate(5deg) scale(1); }
+            100% { transform: translateY(-12px) rotate(-3deg) scale(1.04); }
         }
 
         @keyframes bounceCat3 {
-            0% {
-                transform: translateY(0) scale(1) rotate(0deg);
-            }
-
-            100% {
-                transform: translateY(-8px) scale(1.08) rotate(3deg);
-            }
+            0% { transform: translateY(0) scale(1) rotate(0deg); }
+            100% { transform: translateY(-8px) scale(1.08) rotate(3deg); }
         }
 
         @keyframes bounceCat5 {
-            0% {
-                transform: translateY(0) rotate(3deg) scale(1);
-            }
-
-            100% {
-                transform: translateY(-10px) rotate(-3deg) scale(1.03);
-            }
+            0% { transform: translateY(0) rotate(3deg) scale(1); }
+            100% { transform: translateY(-10px) rotate(-3deg) scale(1.03); }
         }
 
         /* ==========================================================
-           TỐI ƯU GIAO DIỆN ĐIỆN THOẠI DỌC (NỔI BẬT ĐÈ TRÊN PHONG BÌ)
+           TỐI ƯU HOÀN HẢO CHO ĐIỆN THOẠI DỌC (PORTRAIT)
            ========================================================== */
         @media (max-width: 768px) and (orientation: portrait) {
             .experience {
                 justify-content: flex-start !important;
                 padding-top: 15px !important;
-                padding-bottom: 60px !important;
+                padding-bottom: 50px !important;
                 overflow-y: auto !important;
             }
 
             .stage {
                 width: 92vw !important;
-                height: 480px !important;
+                height: 580px !important; /* Mở rộng chiều cao khung để chứa ảnh lộ thiên */
                 margin-top: 125px !important;
             }
 
-            /* 1. Ảnh lớp học nằm phía trên bức thư */
+            /* 1. Ảnh lớp học nằm nổi bật phía trên bức thư */
             .left-photo {
                 left: 50% !important;
                 top: -120px !important;
@@ -743,18 +679,18 @@
                 animation: popInLeftPhone 700ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
             }
 
-            /* 2. CỤM MÈO ĐÈ NỔI HOÀN TOÀN LÊN TRÊN NỀN PHONG BÌ HỒNG (z-index: 99) */
+            /* 2. ĐẨY 5 ẢNH MÈO XUỐNG DƯỚI ĐÁY NẮP TAM GIÁC PHONG BÌ (HOÀN TOÀN KHÔNG BỊ ĐÈ) */
             .right-cats {
                 right: 0 !important;
                 left: 0 !important;
-                top: 275px !important; /* Đặt vừa vặn vào phần bụng hồng của phong bì */
+                top: 470px !important; /* Vị trí dưới mép nhọn của phong bì */
                 width: 100% !important;
                 height: 110px !important;
                 display: flex !important;
                 justify-content: center !important;
                 align-items: flex-end !important;
                 gap: 5px !important;
-                z-index: 99 !important; /* Đè tuyệt đối lên mọi chi tiết của phong bì */
+                z-index: 30 !important;
                 pointer-events: auto !important;
             }
 
@@ -764,31 +700,31 @@
                 bottom: auto !important;
                 left: auto !important;
                 right: auto !important;
-                width: 60px !important;
-                height: 60px !important;
+                width: 58px !important;
+                height: 58px !important;
                 border-width: 2px !important;
                 border-radius: 10px !important;
-                box-shadow: 0 6px 16px rgba(130, 66, 85, 0.35) !important;
+                box-shadow: 0 6px 16px rgba(130, 66, 85, 0.2) !important;
                 background: #ffffff !important;
             }
 
-            /* Mèo 5 (cầm hoa đeo kính) nổi bật hơn cả để lộ rõ dòng chữ "e co thik a hog" */
+            /* Ảnh mèo 5 (đeo kính) thiết kế to nhất hiển thị trọn vẹn "e co thik a hog" */
             .cat-5 { 
-                width: 85px !important; 
-                height: 105px !important; 
+                width: 80px !important; 
+                height: 100px !important; 
                 object-fit: contain !important;
                 border-radius: 12px !important;
                 padding: 2px !important;
-                z-index: 100 !important;
             }
 
+            /* Nút bấm chuyển xuống phía dưới cụm mèo */
             .controls {
-                margin-top: 45px !important;
+                margin-top: 25px !important;
             }
         }
 
         /* ==========================================================
-           TỐI ƯU GIAO DIỆN ĐIỆN THOẠI NGANG (LANDSCAPE)
+           TỐI ƯU HOÀN HẢO CHO ĐIỆN THOẠI NGANG (LANDSCAPE)
            ========================================================== */
         @media (max-width: 950px) and (orientation: landscape) {
             .experience {
