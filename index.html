@@ -764,12 +764,58 @@
             }
         }
 
-        /* Ẩn ảnh 2 bên trên màn hình điện thoại hẹp */
-        @media (max-width: 1100px) {
+        /* TỐI ƯU HIỂN THỊ DÀNH RIÊNG CHO ĐIỆN THOẠI */
+        @media (max-width: 768px) {
 
-            .left-photo,
+            /* Thu nhỏ ảnh lớp học bên trái */
+            .left-photo {
+                left: -130px !important;
+                top: 20px !important;
+                width: 120px !important;
+                padding: 4px !important;
+            }
+
+            /* Thu nhỏ khung chứa mèo bên phải */
             .right-cats {
-                display: none !important;
+                right: -110px !important;
+                top: 10px !important;
+                width: 100px !important;
+            }
+
+            /* Thu nhỏ từng ảnh mèo */
+            .cat-img {
+                width: 45px !important;
+                height: 45px !important;
+                border-width: 1.5px !important;
+                border-radius: 8px !important;
+            }
+
+            /* Điều chỉnh vị trí các mèo trên điện thoại */
+            .cat-1 {
+                top: 0;
+                left: 0;
+            }
+
+            .cat-2 {
+                top: 10px;
+                right: 0;
+            }
+
+            .cat-3 {
+                top: 55px;
+                left: 25px;
+            }
+
+            .cat-4 {
+                bottom: 40px;
+                left: 0;
+            }
+
+            .cat-5 {
+                bottom: 0px !important;
+                right: -5px !important;
+                width: 55px !important;
+                height: 65px !important;
             }
         }
     </style>
