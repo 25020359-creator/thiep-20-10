@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiệp Chúc Mừng 20/10</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,400&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
@@ -39,13 +37,13 @@
         .experience {
             position: relative;
             width: 100%;
-            min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 18px 16px 28px;
-            overflow: hidden;
+            overflow-x: hidden; /* Sửa thành overflow-x để không xén mất ảnh 2 bên */
             background: radial-gradient(ellipse at 50% 62%, #fff0f2 0%, #fffafa 48%, #fff 82%);
         }
 
@@ -94,7 +92,6 @@
             flex: none;
             perspective: 1200px;
             margin-top: 30px;
-            /* Đẩy toàn bộ khung thiệp xuống 30px */
         }
 
         /* Đáy phong bì */
@@ -133,7 +130,6 @@
         }
 
         /* Trạng thái khi mở thư */
-        /* Trạng thái khi mở thư - Lùi thiệp xuống để không bị tràn mép trên */
         .opened .card {
             z-index: 10;
             transform: translateY(-130px) scale(1.03);
@@ -141,7 +137,6 @@
             animation: floatCard 4s ease-in-out infinite alternate 1s;
         }
 
-        /* Cập nhật tọa độ đung đưa tương ứng (-130px) */
         @keyframes floatCard {
             0% {
                 transform: translateY(-130px) scale(1.03) rotate(0deg);
@@ -190,7 +185,6 @@
             transform: rotate(180deg);
         }
 
-        /* Hiệu ứng vệt sáng kim tuyến */
         .card::after {
             content: "";
             position: absolute;
@@ -224,7 +218,6 @@
             }
         }
 
-        /* ĐỊNH DẠNG VÀ HIỆU ỨNG CHỮ TRANG 2 */
         .greeting {
             margin: 0;
             text-align: center;
@@ -448,7 +441,7 @@
             }
         }
 
-        /* CSS DÀNH RIÊNG CHO HOA RƠI TỪ TRÊN XUỐNG */
+        /* HOA RƠI TỪ TRÊN XUỐNG */
         .falling-flower {
             position: fixed !important;
             top: -40px;
@@ -517,12 +510,6 @@
             outline-offset: 4px;
         }
 
-        .page-index {
-            color: #936676;
-            font-size: 14px;
-            letter-spacing: .17em;
-        }
-
         .hidden-state {
             display: none !important;
         }
@@ -537,28 +524,12 @@
             }
         }
 
-        /* CẤU HÌNH VỊ TRÍ KHUNG VÙNG CHỨA 2 BÊN */
-        .stage {
-            position: relative;
-            width: min(92vw, 420px);
-            height: 500px;
-            flex: none;
-            perspective: 1200px;
-            margin-top: 30px;
-        }
-
-        /* 1. KHUNG ẢNH LỚP HỌC (BÊN TRÁI) */
-        /* 1. CẤU HÌNH BÀN TAY / ẢNH 2 BÊN */
-
-        /* Ảnh lớp học bên trái - Phóng to rộng rãi (380px) */
-        /* TINH CHỈNH VỊ TRÍ VÀ KÍCH THƯỚC ẢNH LỚP HỌC */
+        /* 1. KHUNG ẢNH LỚP HỌC (BÊN TRÁI - TRÊN MÁY TÍNH) */
         .left-photo {
             position: absolute;
             left: -380px;
-            /* Dịch sang phải 40px để cởi bỏ dính lề trái */
             top: 100px;
             width: 350px;
-            /* Thu gọn chiều rộng xuống 350px giúp khung ảnh vừa vặn */
             padding: 8px;
             background: #ffffff;
             border: 2.5px solid #eab5c2;
@@ -579,7 +550,6 @@
             display: block;
         }
 
-        /* Khi mở thư: Ảnh lớp học bật ra và bắt đầu đung đưa */
         .opened .left-photo {
             opacity: 1;
             transform: scale(1) rotate(-2deg);
@@ -614,7 +584,7 @@
             }
         }
 
-        /* 2. KHUNG CHỨA 5 ẢNH MÈO BÊN PHẢI */
+        /* 2. KHUNG CHỨA 5 ẢNH MÈO (BÊN PHẢI - TRÊN MÁY TÍNH) */
         .right-cats {
             position: absolute;
             right: -330px;
@@ -625,7 +595,6 @@
             z-index: 5;
         }
 
-        /* Kiểu dáng chung cho tất cả ảnh mèo */
         .cat-img {
             position: absolute;
             width: 110px;
@@ -635,13 +604,11 @@
             border: 3.5px solid #ffffff;
             box-shadow: 0 8px 22px rgba(130, 66, 85, 0.2);
 
-            /* Trạng thái ẩn ban đầu */
             opacity: 0;
             transform: scale(0);
             transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 300ms ease;
         }
 
-        /* TỌA ĐỘ VÀ KÍCH THƯỚC TỪNG MÈO (Đã tối ưu không trùng lặp) */
         .cat-1 {
             top: 0;
             left: 0;
@@ -652,7 +619,6 @@
             right: 0;
         }
 
-        /* Mèo cat-3 dịch vào chính giữa */
         .cat-3 {
             top: 140px;
             left: 90px;
@@ -664,23 +630,17 @@
             left: 0;
         }
 
-        /* Mèo cat-5 mở rộng kích thước hiển thị đủ chữ */
         .cat-5 {
             bottom: -15px;
             right: -20px;
-            width: 135px;
-            /* Tăng chiều rộng lên 135px */
+            width: 125px;
             height: 155px;
-            /* Nâng chiều cao lên 155px để trọn vẹn dòng chữ dưới */
             object-fit: contain;
-            /* Giữ trọn vẹn toàn bộ ảnh không bị cắt xẻm bất kỳ chữ nào */
             background: #ffffff;
-            /* Nền trắng ôm sát góc bo */
             border-radius: 18px;
             z-index: 3;
         }
 
-        /* Khi mở thư: 5 ảnh mèo lần lượt BẬT RA (Pop-out staggered) */
         .opened .cat-img {
             opacity: 1;
         }
@@ -705,7 +665,6 @@
             animation: popCat 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 680ms forwards, bounceCat5 3.4s ease-in-out infinite alternate 1280ms;
         }
 
-        /* Keyframes cho hiệu ứng nảy bật ra */
         @keyframes popCat {
             0% {
                 opacity: 0;
@@ -723,7 +682,6 @@
             }
         }
 
-        /* Keyframes đung đưa liên tục */
         @keyframes bounceCat1 {
             0% {
                 transform: translateY(0) rotate(-4deg) scale(1);
@@ -764,58 +722,51 @@
             }
         }
 
-        /* TỐI ƯU HIỂN THỊ DÀNH RIÊNG CHO ĐIỆN THOẠI */
+        /* ==========================================
+           TỐI ƯU HIỂN THỊ TRÊN MÀN HÌNH ĐIỆN THOẠI
+           ========================================== */
         @media (max-width: 768px) {
+            .stage {
+                width: 90vw;
+            }
 
-            /* Thu nhỏ ảnh lớp học bên trái */
+            /* Đưa ảnh lớp học về lề trái màn hình điện thoại */
             .left-photo {
-                left: -130px !important;
-                top: 20px !important;
-                width: 120px !important;
+                left: -12px !important;
+                top: 0px !important;
+                width: 125px !important;
                 padding: 4px !important;
-            }
-
-            /* Thu nhỏ khung chứa mèo bên phải */
-            .right-cats {
-                right: -110px !important;
-                top: 10px !important;
-                width: 100px !important;
-            }
-
-            /* Thu nhỏ từng ảnh mèo */
-            .cat-img {
-                width: 45px !important;
-                height: 45px !important;
                 border-width: 1.5px !important;
-                border-radius: 8px !important;
+                border-radius: 10px !important;
             }
 
-            /* Điều chỉnh vị trí các mèo trên điện thoại */
-            .cat-1 {
-                top: 0;
-                left: 0;
+            /* Đưa cụm mèo về lề phải màn hình điện thoại */
+            .right-cats {
+                right: -10px !important;
+                top: 0px !important;
+                width: 120px !important;
+                height: 480px !important;
             }
 
-            .cat-2 {
-                top: 10px;
-                right: 0;
+            .cat-img {
+                width: 52px !important;
+                height: 52px !important;
+                border-width: 2px !important;
+                border-radius: 10px !important;
             }
 
-            .cat-3 {
-                top: 55px;
-                left: 25px;
-            }
-
-            .cat-4 {
-                bottom: 40px;
-                left: 0;
-            }
-
-            .cat-5 {
-                bottom: 0px !important;
-                right: -5px !important;
-                width: 55px !important;
-                height: 65px !important;
+            /* Bố trí lại vị trí 5 ảnh mèo xếp dọc lề phải */
+            .cat-1 { top: 0px !important; left: auto !important; right: 55px !important; }
+            .cat-2 { top: 15px !important; right: 0px !important; }
+            .cat-3 { top: 110px !important; left: auto !important; right: 25px !important; }
+            .cat-4 { top: 220px !important; left: auto !important; right: 55px !important; }
+            .cat-5 { 
+                top: 235px !important; 
+                bottom: auto !important;
+                right: 0px !important; 
+                width: 65px !important; 
+                height: 80px !important; 
+                border-radius: 10px !important;
             }
         }
     </style>
@@ -843,7 +794,7 @@
                 <img src="images/cat5.jpg" class="cat-img cat-5" alt="Mèo 5">
             </div>
 
-            <!-- Cấu trúc phong bì & thiệp giữ nguyên -->
+            <!-- Cấu trúc phong bì & thiệp chúc mừng -->
             <div class="canva-card envelope-back"></div>
 
             <article class="canva-card card" id="card">
@@ -881,14 +832,11 @@
         const card = document.getElementById('card');
         const openButton = document.getElementById('open-button');
         const closeButton = document.getElementById('close-button');
-        const pageOne = document.getElementById('page-one');
-        const pageTwo = document.getElementById('page-two');
         let opened = false;
         let touchStartY = null;
         let petalTimer = null;
 
-        // Bắn hiệu ứng pháo tim
-        // Bắn hiệu ứng pháo hoa tung tóe với tông màu ĐẬM và RÕ RÀNG
+        // Bắn hiệu ứng pháo hoa
         function fireConfetti() {
             if (typeof confetti === 'function') {
                 const count = 180;
@@ -902,7 +850,6 @@
                     });
                 }
 
-                // Các mã màu đậm: Đỏ hồng đậm (#b92b5d), Đỏ mận (#824255), Hồng thắm (#d63384), Đỏ cánh sen (#c44569)
                 fire(0.25, { spread: 35, startVelocity: 60, colors: ['#b92b5d', '#d63384', '#824255'] });
                 fire(0.2, { spread: 70, colors: ['#c44569', '#a12a52', '#e6005c'] });
                 fire(0.35, { spread: 110, decay: 0.91, scalar: 1.1, colors: ['#824255', '#b92b5d', '#d63384'] });
@@ -910,43 +857,35 @@
             }
         }
 
-        // Hàm tạo cánh hoa rơi ngẫu nhiên
+        // Tạo cánh hoa rơi ngẫu nhiên
         function createFallingFlower() {
             if (!opened) return;
 
             const flower = document.createElement('div');
             flower.className = 'falling-flower';
 
-            // Mẫu hoa đào và hoa hồng đẹp mắt
             const flowerTypes = ['🌸', '🌺', '🌹', '🌷'];
             flower.innerText = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
 
-            // Kích thước nhỏ nhắn
-            const fontSize = Math.random() * 8 + 12; // 12px - 20px
+            const fontSize = Math.random() * 8 + 12;
             flower.style.fontSize = `${fontSize}px`;
-
-            // Vị trí ngang xuất hiện ngẫu nhiên
             flower.style.left = `${Math.random() * 95}vw`;
 
-            // Thời gian rơi nhẹ nhàng (4s - 7s)
             const duration = Math.random() * 3 + 4;
             flower.style.animationDuration = `${duration}s`;
 
             document.body.appendChild(flower);
 
-            // Tự động xóa bớt DOM khi hoa rơi tới đáy
             setTimeout(() => {
                 flower.remove();
             }, duration * 1000);
         }
 
-        // Chạy vòng lặp tạo hoa rơi
         function startFlowerRain() {
             stopFlowerRain();
-            petalTimer = setInterval(createFallingFlower, 300); // 300ms ra 1 hoa
+            petalTimer = setInterval(createFallingFlower, 300);
         }
 
-        // Dừng và dọn dẹp hoa khi đóng thư
         function stopFlowerRain() {
             if (petalTimer) {
                 clearInterval(petalTimer);
@@ -986,8 +925,7 @@
             touchStartY = null;
         }, { passive: true });
 
-        // Nghiêng 3D
-        // Hiệu ứng nghiêng 3D theo con trỏ chuột
+        // Hiệu ứng nghiêng 3D
         document.addEventListener('mousemove', (e) => {
             if (!opened) return;
             const { innerWidth, innerHeight } = window;
