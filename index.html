@@ -713,16 +713,13 @@
         }
 
         /* ==========================================================
-           TỐI ƯU GIAO DIỆN ĐIỆN THOẠI DỌC (PORTRAIT)
-           ========================================================== */
-        /* ==========================================================
-           TỐI ƯU GIAO DIỆN ĐIỆN THOẠI DỌC (ĐÈ ẢNH MÈO LÊN PHONG BÌ)
+           TỐI ƯU GIAO DIỆN ĐIỆN THOẠI DỌC (NỔI BẬT ĐÈ TRÊN PHONG BÌ)
            ========================================================== */
         @media (max-width: 768px) and (orientation: portrait) {
             .experience {
                 justify-content: flex-start !important;
                 padding-top: 15px !important;
-                padding-bottom: 50px !important;
+                padding-bottom: 60px !important;
                 overflow-y: auto !important;
             }
 
@@ -732,7 +729,7 @@
                 margin-top: 125px !important;
             }
 
-            /* 1. Ảnh lớp học nằm nổi bật phía trên bức thư */
+            /* 1. Ảnh lớp học nằm phía trên bức thư */
             .left-photo {
                 left: 50% !important;
                 top: -120px !important;
@@ -746,18 +743,18 @@
                 animation: popInLeftPhone 700ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
             }
 
-            /* 2. Cụm 5 ảnh mèo ĐÈ HẲN LÊN TRÊN NỀN PHONG BÌ HỒNG */
+            /* 2. CỤM MÈO ĐÈ NỔI HOÀN TOÀN LÊN TRÊN NỀN PHONG BÌ HỒNG (z-index: 99) */
             .right-cats {
                 right: 0 !important;
                 left: 0 !important;
-                top: 310px !important; /* Đẩy lên trên phần bụng phong bì */
+                top: 275px !important; /* Đặt vừa vặn vào phần bụng hồng của phong bì */
                 width: 100% !important;
-                height: 100px !important;
+                height: 110px !important;
                 display: flex !important;
                 justify-content: center !important;
-                align-items: flex-end !important; /* Căn đáy mượt mà */
+                align-items: flex-end !important;
                 gap: 5px !important;
-                z-index: 15 !important; /* Nâng nổi hẳn lên trên mặt phong bì */
+                z-index: 99 !important; /* Đè tuyệt đối lên mọi chi tiết của phong bì */
                 pointer-events: auto !important;
             }
 
@@ -767,26 +764,26 @@
                 bottom: auto !important;
                 left: auto !important;
                 right: auto !important;
-                width: 58px !important;
-                height: 58px !important;
+                width: 60px !important;
+                height: 60px !important;
                 border-width: 2px !important;
                 border-radius: 10px !important;
                 box-shadow: 0 6px 16px rgba(130, 66, 85, 0.35) !important;
                 background: #ffffff !important;
             }
 
-            /* Riêng cat5.jpg phóng to riêng biệt để hiển thị trọn vẹn "e co thik a hog" */
+            /* Mèo 5 (cầm hoa đeo kính) nổi bật hơn cả để lộ rõ dòng chữ "e co thik a hog" */
             .cat-5 { 
-                width: 78px !important; 
-                height: 95px !important; 
+                width: 85px !important; 
+                height: 105px !important; 
                 object-fit: contain !important;
                 border-radius: 12px !important;
                 padding: 2px !important;
+                z-index: 100 !important;
             }
 
-            /* Đẩy nút gập thư xuống dưới cho thoáng */
             .controls {
-                margin-top: 30px !important;
+                margin-top: 45px !important;
             }
         }
 
@@ -807,7 +804,6 @@
                 margin-top: 20px !important;
             }
 
-            /* Đòn bẩy lùi vị trí trượt thiệp nhỏ lại cho vừa màn hình ngang */
             .envelope-back, .envelope-front, .front-side, .flap {
                 top: 160px !important;
                 height: 180px !important;
@@ -826,7 +822,6 @@
             .envelope-title { top: 230px !important; }
             .bow { top: 310px !important; }
 
-            /* Ảnh lớp học đẩy sang góc bên trái */
             .left-photo {
                 left: -190px !important;
                 top: 30px !important;
@@ -838,7 +833,6 @@
                 transform: scale(1) rotate(-2deg) !important;
             }
 
-            /* 5 ảnh mèo nằm ở bên phải */
             .right-cats {
                 right: -180px !important;
                 top: 10px !important;
