@@ -715,6 +715,9 @@
         /* ==========================================================
            TỐI ƯU GIAO DIỆN ĐIỆN THOẠI DỌC (PORTRAIT)
            ========================================================== */
+        /* ==========================================================
+           TỐI ƯU GIAO DIỆN ĐIỆN THOẠI DỌC (ĐÈ ẢNH MÈO LÊN PHONG BÌ)
+           ========================================================== */
         @media (max-width: 768px) and (orientation: portrait) {
             .experience {
                 justify-content: flex-start !important;
@@ -729,7 +732,7 @@
                 margin-top: 125px !important;
             }
 
-            /* 1. Ảnh lớp học nằm chính giữa PHÍA TRÊN bức thiệp */
+            /* 1. Ảnh lớp học nằm nổi bật phía trên bức thư */
             .left-photo {
                 left: 50% !important;
                 top: -120px !important;
@@ -743,17 +746,19 @@
                 animation: popInLeftPhone 700ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
             }
 
-            /* 2. Cụm 5 ảnh mèo xếp ngang PHÍA DƯỚI bức thiệp */
+            /* 2. Cụm 5 ảnh mèo ĐÈ HẲN LÊN TRÊN NỀN PHONG BÌ HỒNG */
             .right-cats {
                 right: 0 !important;
                 left: 0 !important;
-                top: 415px !important;
+                top: 310px !important; /* Đẩy lên trên phần bụng phong bì */
                 width: 100% !important;
-                height: 90px !important;
+                height: 100px !important;
                 display: flex !important;
                 justify-content: center !important;
-                align-items: center !important;
-                gap: 6px !important;
+                align-items: flex-end !important; /* Căn đáy mượt mà */
+                gap: 5px !important;
+                z-index: 15 !important; /* Nâng nổi hẳn lên trên mặt phong bì */
+                pointer-events: auto !important;
             }
 
             .cat-img {
@@ -766,18 +771,22 @@
                 height: 58px !important;
                 border-width: 2px !important;
                 border-radius: 10px !important;
-                box-shadow: 0 4px 12px rgba(130, 66, 85, 0.25) !important;
+                box-shadow: 0 6px 16px rgba(130, 66, 85, 0.35) !important;
+                background: #ffffff !important;
             }
 
+            /* Riêng cat5.jpg phóng to riêng biệt để hiển thị trọn vẹn "e co thik a hog" */
             .cat-5 { 
-                width: 68px !important; 
-                height: 80px !important; 
+                width: 78px !important; 
+                height: 95px !important; 
                 object-fit: contain !important;
                 border-radius: 12px !important;
+                padding: 2px !important;
             }
 
+            /* Đẩy nút gập thư xuống dưới cho thoáng */
             .controls {
-                margin-top: 55px !important;
+                margin-top: 30px !important;
             }
         }
 
