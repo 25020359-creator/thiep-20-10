@@ -7,7 +7,7 @@
     <title>Thiệp Chúc Mừng 20/10</title>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>f
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
     <style>
         :root {
@@ -43,7 +43,7 @@
             align-items: center;
             justify-content: center;
             padding: 18px 16px 28px;
-            overflow-x: hidden; /* Sửa thành overflow-x để không xén mất ảnh 2 bên */
+            overflow-x: hidden;
             background: radial-gradient(ellipse at 50% 62%, #fff0f2 0%, #fffafa 48%, #fff 82%);
         }
 
@@ -514,16 +514,6 @@
             display: none !important;
         }
 
-        @media (max-height: 660px) {
-            .experience {
-                justify-content: flex-start;
-            }
-
-            .stage {
-                margin-top: -34px;
-            }
-        }
-
         /* 1. KHUNG ẢNH LỚP HỌC (BÊN TRÁI - TRÊN MÁY TÍNH) */
         .left-photo {
             position: absolute;
@@ -722,33 +712,29 @@
             }
         }
 
-        /* ==========================================
-           TỐI ƯU HIỂN THỊ TRÊN MÀN HÌNH ĐIỆN THOẠI
-           ========================================== */
-        /* ==========================================
-           TỐI ƯU GIAO DIỆN ĐIỆN THOẠI (XẾP ẢNH TỪ TRÊN XUỐNG)
-           ========================================== */
-        @media (max-width: 768px) {
+        /* ==========================================================
+           TỐI ƯU GIAO DIỆN ĐIỆN THOẠI DỌC (PORTRAIT)
+           ========================================================== */
+        @media (max-width: 768px) and (orientation: portrait) {
             .experience {
-                justify-content: flex-start;
-                padding-top: 10px;
-                padding-bottom: 40px;
-                overflow-y: auto; /* Cho phép cuộn trang mượt mà nếu màn hình quá ngắn */
+                justify-content: flex-start !important;
+                padding-top: 15px !important;
+                padding-bottom: 50px !important;
+                overflow-y: auto !important;
             }
 
             .stage {
-                width: 92vw;
-                height: 480px;
-                margin-top: 120px; /* Tạo khoảng trống phía trên cho ảnh lớp học */
+                width: 92vw !important;
+                height: 480px !important;
+                margin-top: 125px !important;
             }
 
-            /* 1. Đặt ảnh lớp học nằm nổi bật chính giữa PHÍA TRÊN bức thiệp */
+            /* 1. Ảnh lớp học nằm chính giữa PHÍA TRÊN bức thiệp */
             .left-photo {
                 left: 50% !important;
-                top: -115px !important;
+                top: -120px !important;
                 width: 88vw !important;
                 max-width: 320px !important;
-                transform: translateX(-50%) scale(0.3) rotate(-5deg) !important;
                 z-index: 12 !important;
             }
 
@@ -757,13 +743,13 @@
                 animation: popInLeftPhone 700ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
             }
 
-            /* 2. Đặt 5 ảnh mèo xếp ngang xinh xắn PHÍA DƯỚI bức thiệp */
+            /* 2. Cụm 5 ảnh mèo xếp ngang PHÍA DƯỚI bức thiệp */
             .right-cats {
                 right: 0 !important;
                 left: 0 !important;
-                top: 410px !important;
+                top: 415px !important;
                 width: 100% !important;
-                height: 100px !important;
+                height: 90px !important;
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
@@ -776,24 +762,100 @@
                 bottom: auto !important;
                 left: auto !important;
                 right: auto !important;
-                width: 62px !important;
-                height: 62px !important;
+                width: 58px !important;
+                height: 58px !important;
                 border-width: 2px !important;
                 border-radius: 10px !important;
                 box-shadow: 0 4px 12px rgba(130, 66, 85, 0.25) !important;
             }
 
-            /* Mèo cat-5 to hơn để lộ trọn vẹn từng chữ */
             .cat-5 { 
-                width: 72px !important; 
-                height: 85px !important; 
+                width: 68px !important; 
+                height: 80px !important; 
                 object-fit: contain !important;
                 border-radius: 12px !important;
             }
 
-            /* Đẩy nút bấm xuống bên dưới cụm ảnh mèo */
             .controls {
-                margin-top: 50px !important;
+                margin-top: 55px !important;
+            }
+        }
+
+        /* ==========================================================
+           TỐI ƯU GIAO DIỆN ĐIỆN THOẠI NGANG (LANDSCAPE)
+           ========================================================== */
+        @media (max-width: 950px) and (orientation: landscape) {
+            .experience {
+                justify-content: flex-start !important;
+                padding-top: 10px !important;
+                padding-bottom: 40px !important;
+                overflow-y: auto !important;
+            }
+
+            .stage {
+                width: 360px !important;
+                height: 380px !important;
+                margin-top: 20px !important;
+            }
+
+            /* Đòn bẩy lùi vị trí trượt thiệp nhỏ lại cho vừa màn hình ngang */
+            .envelope-back, .envelope-front, .front-side, .flap {
+                top: 160px !important;
+                height: 180px !important;
+            }
+
+            .card {
+                top: 110px !important;
+                height: 230px !important;
+            }
+
+            .opened .card {
+                transform: translateY(-80px) scale(1) !important;
+                animation: floatCardLand 4s ease-in-out infinite alternate 1s !important;
+            }
+
+            .envelope-title { top: 230px !important; }
+            .bow { top: 310px !important; }
+
+            /* Ảnh lớp học đẩy sang góc bên trái */
+            .left-photo {
+                left: -190px !important;
+                top: 30px !important;
+                width: 180px !important;
+                padding: 4px !important;
+            }
+
+            .opened .left-photo {
+                transform: scale(1) rotate(-2deg) !important;
+            }
+
+            /* 5 ảnh mèo nằm ở bên phải */
+            .right-cats {
+                right: -180px !important;
+                top: 10px !important;
+                width: 170px !important;
+                height: 320px !important;
+            }
+
+            .cat-img {
+                width: 65px !important;
+                height: 65px !important;
+                border-width: 2px !important;
+            }
+
+            .cat-1 { top: 0 !important; left: 0 !important; }
+            .cat-2 { top: 10px !important; right: 0 !important; }
+            .cat-3 { top: 80px !important; left: 45px !important; }
+            .cat-4 { top: 155px !important; left: 0 !important; }
+            .cat-5 { 
+                top: 155px !important; 
+                right: 0 !important; 
+                width: 75px !important; 
+                height: 90px !important; 
+            }
+
+            .controls {
+                margin-top: 20px !important;
             }
         }
 
@@ -806,6 +868,12 @@
                 opacity: 1;
                 transform: translateX(-50%) scale(1) rotate(-1deg);
             }
+        }
+
+        @keyframes floatCardLand {
+            0% { transform: translateY(-80px) scale(1) rotate(0deg); }
+            50% { transform: translateY(-85px) scale(1) rotate(0.5deg); }
+            100% { transform: translateY(-75px) scale(1) rotate(-0.5deg); }
         }
     </style>
 </head>
